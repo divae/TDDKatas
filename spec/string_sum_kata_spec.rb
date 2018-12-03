@@ -1,16 +1,15 @@
-class StringSum
-    def self.sum(firstString,secondString)
-        (firstString.to_i + secondString.to_i)
-    end
-end
+require 'stringSum'
 
-describe 'factoryStrings' do
+describe 'factory of strings' do
+
+    let(:stringSum){ StringSum.new }
+
     it 'sum two natural numbers' do
         #arrange
         firstString = '1'
         secondString = '2'
         #act
-        result = StringSum.sum(firstString,secondString)
+        result = stringSum.sum(firstString,secondString)
         #assert
         expect(result).to eq(3)
     end
@@ -19,7 +18,7 @@ describe 'factoryStrings' do
          firstString = '1'
          secondString = 'a'
          #act
-         result = StringSum.sum(firstString,secondString)
+         result = stringSum.sum(firstString,secondString)
          #assert
          expect(result).to eq(1)
     end
